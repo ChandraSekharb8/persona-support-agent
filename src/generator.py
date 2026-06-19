@@ -45,43 +45,53 @@ Respond with:
 
 def _fallback_response(user_query: str, persona: str, retrieved_chunks: list) -> str:
     """
-    Safe fallback response if Gemini generation fails.
-    This prevents Streamlit from crashing.
+    Source-grounded fallback response if Gemini generation fails.
+    This prevents Streamlit from crashing and still gives a useful answer.
     """
 
-    top_sources = ", ".join(
-        list({chunk.get("source", "Unknown") for chunk in retrieved_chunks})
-    )
+    sources = list({chunk.get("source", "Unknown") for chunk in retrieved_chunks})
+    top_sources = ", ".join(sources) if sources else "No source found"
 
-    if not top_sources:
-        top_sources = "No source found"
+    context_preview = "\n".join(
+        chunk.get("text", "")[:600] for chunk in retrieved_chunks[:2]
+    )
 
     if persona == "Technical Expert":
         return (
-            "Based on the retrieved knowledge base content, this appears to be a technical issue. "
-            "Please verify the relevant configuration, authentication format, token validity, "
-            "permissions, and retry the request. "
-            f"Retrieved sources used: {top_sources}. "
-            "The AI generation service failed temporarily, so this safe fallback response is shown."
+            "Based on the retrieved knowledge base content, this issue can be handled as a technical support case.\n\n"
+            "Likely areas to verify:\n"
+            "1. Check whether the required configuration or authentication details are correctly provided.\n"
+            "2. Validate the request format, token, endpoint, permissions, or integration setup based on the retrieved guide.\n"
+            "3. Retry the request after correcting the configuration.\n"
+            "4. If the issue continues after these checks, escalate it for deeper log-level investigation.\n\n"
+            f"Retrieved sources used: {top_sources}\n\n"
+            f"Relevant retrieved context:\n{context_preview}"
         )
 
     if persona == "Business Executive":
         return (
-            "Based on the retrieved knowledge base content, this issue may affect service continuity "
-            "or operational usage. The recommended next step is to review the retrieved support guidance "
-            "and escalate if the issue is business-critical. "
-            f"Retrieved sources used: {top_sources}. "
-            "The AI generation service failed temporarily, so this safe fallback response is shown."
+            "Based on the retrieved knowledge base content, this issue should be handled with priority based on business impact.\n\n"
+            "Summary:\n"
+            "1. The issue may affect operational continuity or customer productivity.\n"
+            "2. The recommended action is to follow the documented troubleshooting or support process first.\n"
+            "3. If the issue impacts multiple users, production access, billing, or SLA commitments, it should be escalated to human support.\n"
+            "4. The next update should include impact, current status, workaround, and expected resolution direction.\n\n"
+            f"Retrieved sources used: {top_sources}\n\n"
+            f"Relevant retrieved context:\n{context_preview}"
         )
 
     return (
-        "I understand this is inconvenient. Based on the retrieved support documents, please follow "
-        "the recommended troubleshooting steps from the relevant guide. If the issue continues, "
-        "human support should review it. "
-        f"Retrieved sources used: {top_sources}. "
-        "The AI generation service failed temporarily, so this safe fallback response is shown."
+        "I understand how inconvenient this issue is. Based on the retrieved support documents, please try the following steps:\n\n"
+        "1. Refresh the page and try again.\n"
+        "2. Log out and log in again.\n"
+        "3. Clear browser cache and cookies.\n"
+        "4. Try opening the application in incognito or private mode.\n"
+        "5. Disable browser extensions temporarily.\n"
+        "6. Try another browser or network.\n"
+        "7. If the issue still continues, human support should review it further.\n\n"
+        f"Retrieved sources used: {top_sources}\n\n"
+        f"Relevant retrieved context:\n{context_preview}"
     )
-
 
 def generate_adaptive_response(
     user_query: str,

@@ -18,7 +18,7 @@ CHROMA_DB_DIR = BASE_DIR / "chroma_db"
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Gemini models
-GENERATION_MODEL = "gemini-2.5-flash"
+GENERATION_MODEL = "gemini-2.5-flash-lite"
 EMBEDDING_MODEL = "gemini-embedding-001"
 
 # RAG settings
