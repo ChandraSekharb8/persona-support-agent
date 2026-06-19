@@ -43,6 +43,46 @@ Respond with:
 """
 
 
+def _fallback_response(user_query: str, persona: str, retrieved_chunks: list) -> str:
+    """
+    Safe fallback response if Gemini generation fails.
+    This prevents Streamlit from crashing.
+    """
+
+    top_sources = ", ".join(
+        list({chunk.get("source", "Unknown") for chunk in retrieved_chunks})
+    )
+
+    if not top_sources:
+        top_sources = "No source found"
+
+    if persona == "Technical Expert":
+        return (
+            "Based on the retrieved knowledge base content, this appears to be a technical issue. "
+            "Please verify the relevant configuration, authentication format, token validity, "
+            "permissions, and retry the request. "
+            f"Retrieved sources used: {top_sources}. "
+            "The AI generation service failed temporarily, so this safe fallback response is shown."
+        )
+
+    if persona == "Business Executive":
+        return (
+            "Based on the retrieved knowledge base content, this issue may affect service continuity "
+            "or operational usage. The recommended next step is to review the retrieved support guidance "
+            "and escalate if the issue is business-critical. "
+            f"Retrieved sources used: {top_sources}. "
+            "The AI generation service failed temporarily, so this safe fallback response is shown."
+        )
+
+    return (
+        "I understand this is inconvenient. Based on the retrieved support documents, please follow "
+        "the recommended troubleshooting steps from the relevant guide. If the issue continues, "
+        "human support should review it. "
+        f"Retrieved sources used: {top_sources}. "
+        "The AI generation service failed temporarily, so this safe fallback response is shown."
+    )
+
+
 def generate_adaptive_response(
     user_query: str,
     persona: str,
@@ -103,20 +143,30 @@ Retrieved knowledge base context:
 {context_text}
 """
 
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    try:
+        client = genai.Client(api_key=GEMINI_API_KEY)
 
-    response = client.models.generate_content(
-        model=GENERATION_MODEL,
-        contents=user_query,
-        config=types.GenerateContentConfig(
-            system_instruction=system_prompt,
-            temperature=0.2
+        response = client.models.generate_content(
+            model=GENERATION_MODEL,
+            contents=user_query,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                temperature=0.2
+            )
         )
-    )
+
+        final_response = response.text
+
+    except Exception:
+        final_response = _fallback_response(
+            user_query=user_query,
+            persona=persona,
+            retrieved_chunks=retrieved_chunks
+        )
 
     return {
         "escalated": False,
-        "response": response.text,
+        "response": final_response,
         "handoff_summary": None,
         "escalation_reason": None
     }
