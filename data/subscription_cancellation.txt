@@ -1,0 +1,54 @@
+Subscription Cancellation Guide
+
+Overview
+Customers can cancel their subscription from the Billing section. Cancellation prevents future renewal charges but does not always delete the account immediately.
+
+Cancellation Location
+Customers can cancel from:
+
+Account Settings -> Billing -> Manage Subscription -> Cancel Plan
+
+Cancellation Steps
+1. Log in to the account.
+2. Open Account Settings.
+3. Select Billing.
+4. Click Manage Subscription.
+5. Select Cancel Plan.
+6. Confirm the cancellation reason.
+7. Submit cancellation request.
+
+Effect of Cancellation
+After cancellation:
+- The subscription will not renew in the next billing cycle.
+- Paid features remain active until the end of the current billing period.
+- Workspace data remains available according to the data retention policy.
+- Users may reactivate before the billing cycle ends.
+
+Downgrade Instead of Cancel
+If the customer wants to reduce cost, they may downgrade to a lower plan instead of cancellation.
+
+Downgrade path:
+
+Account Settings -> Billing -> Change Plan -> Select Lower Plan
+
+Data Retention
+After cancellation, workspace data may be retained for a limited period. Customers should export important reports, invoices, and files before the retention period ends.
+
+Reactivation
+Customers can reactivate from:
+
+Account Settings -> Billing -> Reactivate Plan
+
+If the plan has already expired, the customer may need to choose a new subscription plan.
+
+Refunds
+Cancellation does not automatically create a refund. Refund eligibility must be reviewed by the billing team.
+
+Escalation Conditions
+Escalate to human support if:
+- Customer requests refund during cancellation
+- Customer cannot access Billing page
+- Enterprise contract cancellation is requested
+- Customer wants immediate data deletion
+- Account owner is unavailable
+- Legal, compliance, or tax concerns are mentioned

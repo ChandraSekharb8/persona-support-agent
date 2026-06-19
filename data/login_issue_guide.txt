@@ -1,0 +1,60 @@
+Login Issue Troubleshooting Guide
+
+Overview
+Login issues can happen because of incorrect credentials, expired sessions, account lock, email verification problems, browser cache, or two-factor authentication errors.
+
+Common Login Problems
+- Incorrect password
+- Forgotten password
+- Account locked after multiple attempts
+- Email verification pending
+- Two-factor authentication code not working
+- Login page keeps refreshing
+- User redirected back to login page
+- Account disabled by admin
+
+Basic Login Troubleshooting
+Ask the customer to:
+1. Confirm the correct email address.
+2. Check for typing mistakes in password.
+3. Use the password reset option.
+4. Clear browser cache and cookies.
+5. Try incognito/private browser mode.
+6. Try a different browser.
+7. Check whether the account invitation was accepted.
+
+Password Reset
+If the customer forgot the password:
+1. Go to the login page.
+2. Click Forgot Password.
+3. Enter registered email address.
+4. Open the password reset email.
+5. Create a new password.
+6. Return to login page and sign in.
+
+Password Reset Email Not Received
+Ask the customer to:
+1. Check spam or junk folder.
+2. Confirm that the email address is correct.
+3. Wait 5–10 minutes.
+4. Search inbox for the product name.
+5. Ask workspace admin to confirm account status.
+
+Account Lock
+Accounts may be temporarily locked after multiple failed login attempts. The customer should wait for the lock period to expire or contact support if urgent.
+
+Two-Factor Authentication Issue
+If the 2FA code does not work:
+1. Ask the customer to check phone time synchronization.
+2. Ask them to use backup recovery codes.
+3. Ask them to regenerate the code.
+4. If backup codes are lost, escalate to human support.
+
+Escalation Conditions
+Escalate to human support if:
+- Customer cannot access email
+- Account is locked and business-critical access is required
+- Two-factor authentication recovery is needed
+- Account appears disabled or suspended
+- Admin ownership transfer is requested
+- User reports suspicious login activity

@@ -1,0 +1,59 @@
+Payment Failure Troubleshooting Guide
+
+Overview
+Payment failures occur when the subscription payment cannot be completed. The issue may be caused by card details, bank restrictions, billing address mismatch, payment gateway timeout, or insufficient balance.
+
+Common Payment Failure Reasons
+- Expired debit or credit card
+- Incorrect card number
+- Incorrect CVV
+- Insufficient balance
+- Bank declined the transaction
+- International payments disabled
+- Billing address mismatch
+- Payment gateway timeout
+- Card spending limit exceeded
+
+Customer Resolution Steps
+Ask the customer to:
+1. Confirm that the card details are correct.
+2. Check whether the card is expired.
+3. Verify the billing address.
+4. Confirm that sufficient balance is available.
+5. Check whether online and international payments are enabled.
+6. Retry the payment after 10 minutes.
+7. Use a different payment method if the issue continues.
+
+Updating Payment Method
+Customers can update payment information from:
+
+Account Settings -> Billing -> Payment Method -> Update
+
+After updating the payment method, the customer can retry the failed invoice payment from the Billing page.
+
+Failed Renewal Payment
+If auto-renewal payment fails:
+- The customer may receive a payment failure email.
+- The system may retry payment automatically.
+- The account may enter a grace period.
+- Some premium features may be restricted after the grace period.
+
+Payment Gateway Timeout
+If the payment page times out:
+1. Ask the customer not to refresh repeatedly.
+2. Ask them to wait 10 minutes.
+3. Check whether the invoice shows paid or unpaid.
+4. If unpaid, retry payment.
+5. If paid but subscription is not updated, escalate to billing support.
+
+Pending Bank Authorization
+Sometimes banks show a temporary pending charge. Pending authorization usually disappears within 24–48 hours if the payment was not completed.
+
+Escalation Conditions
+Escalate to human support if:
+- Payment was deducted but invoice is unpaid
+- Duplicate payment is visible
+- Customer paid but plan was not activated
+- Bank confirms successful payment but dashboard shows failed
+- Customer is an enterprise account
+- Billing contact or tax invoice correction is required

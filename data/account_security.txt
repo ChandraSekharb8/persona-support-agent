@@ -1,0 +1,67 @@
+Account Security Guide
+
+Overview
+Account security protects customer workspaces, user data, login sessions, and access permissions. Customers should immediately report suspicious activity.
+
+Common Security Issues
+Customers may contact support about:
+- Unknown login alerts
+- Suspicious password reset emails
+- Unauthorized user activity
+- Lost access to a workspace
+- Compromised credentials
+- Two-factor authentication problems
+
+Unknown Login Alert
+If a user receives an unknown login alert, they should:
+1. Change their password immediately.
+2. Review active sessions.
+3. Sign out from all devices.
+4. Enable two-factor authentication.
+5. Review workspace members and roles.
+
+Password Security
+A strong password should:
+- Be at least 12 characters long
+- Include uppercase and lowercase letters
+- Include numbers and symbols
+- Not be reused from another website
+- Not include personal information
+
+Two-Factor Authentication
+Two-factor authentication adds another layer of protection. Users can enable it from:
+
+Account Settings -> Security -> Two-Factor Authentication
+
+If a user loses access to their authenticator app:
+1. Ask them to use backup recovery codes.
+2. Ask them to verify account ownership.
+3. If backup codes are not available, escalate to human support.
+
+Session Management
+Users can review and revoke active sessions from:
+
+Account Settings -> Security -> Active Sessions
+
+Recommended steps:
+1. Review device name and location.
+2. Revoke unknown sessions.
+3. Change password after revoking sessions.
+4. Enable two-factor authentication.
+
+Workspace Access Review
+Admins should regularly review:
+- User roles
+- Admin permissions
+- API token access
+- Billing permissions
+- Recently invited users
+
+Escalation Conditions
+Escalate to human support if:
+- The customer reports unauthorized account access
+- The customer cannot verify account ownership
+- Two-factor authentication recovery is required
+- Admin access has been lost
+- Sensitive customer data may be exposed
+- Legal or compliance concerns are mentioned

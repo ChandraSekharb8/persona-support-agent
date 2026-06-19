@@ -1,0 +1,84 @@
+Billing Policy Guide
+
+Overview
+Our SaaS platform billing system manages subscriptions, invoices, renewals, taxes, plan upgrades, and payment history. Billing details are available from the Billing section inside Account Settings.
+
+Billing Dashboard Location
+Users can view billing information from:
+
+Account Settings -> Billing -> Subscription & Invoices
+
+The Billing page shows:
+
+* Current subscription plan
+* Renewal date
+* Invoice history
+* Payment method
+* Tax details
+* Billing contact email
+
+Invoice Generation
+Invoices are generated automatically after every successful subscription payment. Customers can download invoices from the Billing dashboard.
+
+Steps to download an invoice:
+
+1. Go to Account Settings.
+2. Open Billing.
+3. Select Invoice History.
+4. Choose the required invoice month.
+5. Click Download Invoice.
+
+Payment Failure
+A payment may fail because of:
+
+* Expired card
+* Insufficient balance
+* Bank decline
+* Incorrect billing address
+* International payment restriction
+* Payment gateway timeout
+
+Resolution steps:
+
+1. Ask the customer to verify the payment method.
+2. Ask the customer to update card details.
+3. Ask the customer to retry payment after 10 minutes.
+4. If payment fails again, suggest using another payment method.
+5. If the bank declined the payment, ask the customer to contact their bank.
+
+Subscription Renewal
+Subscriptions renew automatically at the end of the billing cycle if auto-renewal is enabled. Customers receive renewal reminders before the billing date.
+
+Plan Upgrade
+When a customer upgrades their plan, the new plan becomes active immediately. The customer may be charged a prorated amount based on the remaining days in the current billing cycle.
+
+Plan Downgrade
+When a customer downgrades their plan, the change is applied from the next billing cycle. Existing premium features may remain available until the end of the current cycle.
+
+Duplicate Charges
+Duplicate charges are rare but can happen when:
+
+* A payment retry succeeds after an initial timeout
+* The bank temporarily shows an authorization hold
+* The customer clicks pay multiple times
+* The payment gateway sends a delayed confirmation
+
+Resolution steps:
+
+1. Ask the customer to check whether both charges are fully settled or one is pending.
+2. Ask the customer to wait 24–48 hours for pending holds to disappear.
+3. If both charges are settled, escalate to billing support.
+4. Include invoice number, payment date, amount, and customer account email in the escalation.
+
+Refunds
+Refund requests must be reviewed by the billing team. Automated support should not promise refund approval.
+
+Escalation Conditions
+Escalate to human support if:
+
+* The customer demands a refund
+* Duplicate charges are confirmed
+* Legal or tax-related billing concerns are raised
+* The customer reports unauthorized payment
+* Enterprise invoice corrections are required
+* Account ownership or billing contact change is requested
