@@ -1,5 +1,10 @@
 # Persona-Adaptive Customer Support Agent
 
+## Live Demo
+
+Deployed App:https://persona-support-agent-fucad2nuyjfmrrmhcr6mkr.streamlit.app/ 
+GitHub Repository:https://github.com/ChandraSekharb8/persona-support-agent.git
+
 ## Project Overview
 
 This project is a Persona-Adaptive Customer Support Agent built using Python, Gemini LLM, Retrieval-Augmented Generation, ChromaDB, and Streamlit.
